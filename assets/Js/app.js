@@ -21,25 +21,27 @@ const app = createApp({
         }
     },
     methods: {
+        axiosGenerate(max) {
+            for (let i = 0; i < 10; i++) {
 
+                axios
+
+                    .get(this.url)
+
+                    .then(response => {
+
+                        this.listEmail.push(response.data.response)
+
+                    })
+            }
+        }
     },
     mounted() {
-
-        for (let i = 0; i < 10; i++) {
-
-            axios
-
-                .get(this.url)
-
-                .then(response => {
-
-                    this.listEmail.push(response.data.response)
-
-                })
-        }
+        this.axiosGenerate()
 
 
-    },
+
+    }
 
 })
 
